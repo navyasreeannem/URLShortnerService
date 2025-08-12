@@ -1,2 +1,2 @@
 # URLShortnerService
-Making url shorter
+Making url shorter services for the college project
