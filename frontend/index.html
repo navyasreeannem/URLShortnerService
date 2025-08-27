@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dynamic URL Shortener</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="shortener-container">
+    <h2>URL Shortener</h2>
+    <label for="long-link"><b>Long Link:</b></label>
+    <input type="text" id="long-link" placeholder="Enter long URL here">
+    <label for="short-link"><b>Short Link:</b></label>
+    <input type="text" id="short-link" placeholder="Short URL will appear here" readonly>
+    <button onclick="generateShortLink()">Generate Short Link</button>
+  </div>
+  <div id="popup-message">Short link is generated!</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
