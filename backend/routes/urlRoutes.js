@@ -1,12 +1,11 @@
 import express from "express";
-import { shortenUrl, redirectUrl } from "../controllers/urlController.js";
+import { shortenUrl } from "../controllers/urlController.js";
 
 const router = express.Router();
 
 // API to shorten
 router.post("/shorten", shortenUrl);
 
-// Redirect route
-router.get("/:shortId", redirectUrl);
+// No redirect route needed for Bitly
 
 export default router;

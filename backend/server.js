@@ -7,17 +7,18 @@ import urlRoutes from "./routes/urlRoutes.js";
 dotenv.config();
 const app = express();
 
-// Middleware
 app.use(express.json());
 
-// Static frontend (paste HTML into /public)
+// Serve frontend
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "..", "frontend")));
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "..", "frontend", "index.html"));
+});
 
-// Routes
-app.use("/", urlRoutes);
+// API Routes
+app.use("/api", urlRoutes);   // ⚠️ best practice: prefix with /api
 
-// Server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
