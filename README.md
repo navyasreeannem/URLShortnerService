@@ -53,11 +53,11 @@ This project includes a `Dockerfile` so you can run it easily inside a container
    ```
 ### 2. Pull the image from Docker Hub:
  ```bash
-        docker pull rishithakoganti/url-shortener-backend:tagname
+        docker pull rishithakoganti/url-shortener-backend:latest
 ```
 ### 3. Run the container:
  ```bash
-        docker run -d -p 5000:5000 --name url-shortener-container rishithakoganti/url-shortener-backend:tagname
+        docker run -d -p 5000:5000 --name url-shortener-container rishithakoganti/url-shortener-backend:latest
 ```
 ### 4. Access inside the container (optional):
  ```bash
