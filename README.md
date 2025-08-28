@@ -84,13 +84,13 @@ docker build -t rishithakoganti/url-shortener-backend:tagname .
          docker exec -it url-shortener-container sh
    ```
 ### 5. Check running containers:
-    ```bash
+```bash
          docker ps
-    ```
+```
 ### 6. View container logs (optional):
-    ```bash
+```bash
          docker logs -f url-shortener-container
-    ```
+```
 ✅ Now the service will be running at:
 👉 http://localhost:5000/ (or the port you exposed)
 
