@@ -74,10 +74,7 @@ docker logs -f url-shortener-container
 👉 http://localhost:5000/ (or the port you exposed)
 
 ---
-
-On GitHub, this will render exactly like your screenshot —  
-🔹 Each step starts with **number + heading**  
-🔹 Command appears in a **dark box with a copy button**  
+ 
 
 ---
 
