@@ -46,23 +46,7 @@ This project includes a `Dockerfile` so you can run it easily inside a container
 
 ---
 
-## 🔹 For the Project Owner (Build & Push Image)  
-
-### 1. Build the Docker image  
-```bash
-docker build -t rishithakoganti/url-shortener-backend:tagname .
-
-
-```
-### 2. Login to Docker Hub:
-   ```bash
-        docker login
-   ```
-### 3. Push the image to Docker Hub:
-   ```bash
-        docker push rishithakoganti/url-shortener-backend:tagname
-   ```
-🔹 For Other Developers (Pull & Run Image)
+##🔹 For Other Developers (Pull & Run Image)
 ### 1. Login to Docker Hub:
    ```bash
         docker login
