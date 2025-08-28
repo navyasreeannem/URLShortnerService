@@ -50,40 +50,29 @@ This project includes a `Dockerfile` so you can run it easily inside a container
 
 ## 🔹 For the Project Owner (Build & Push Image)  
 
-1. **Build the Docker image**  
-   ```bash
-   docker build -t rishithakoganti/url-shortener-backend:tagname .
-Login to Docker Hub:
+## 🔹 For the Project Owner (Build & Push Image)
 
+### 1. Build the Docker image
+```bash
+docker build -t rishithakoganti/url-shortener-backend:tagname .
+2. Login to Docker Hub
 docker login
-
-Push the image to Docker Hub:
-
-docker docker push rishithakoganti/url-shortener-backend:tagname
-
-🔹 For Other Developers (Pull & Run Image):-
-
-Login to Docker Hub:
-
+3. Push the image to Docker Hub
+docker push rishithakoganti/url-shortener-backend:tagname
+🔹 For Other Developers (Pull & Run Image)
+1. Login to Docker Hub
 docker login
-
-Pull the image from Docker Hub
-
+2. Pull the image from Docker Hub
 docker pull rishithakoganti/url-shortener-backend:tagname
-
-Run the container:
-
+3. Run the container
 docker run -d -p 5000:5000 --name url-shortener-container rishithakoganti/url-shortener-backend:tagname
-
-Access inside the container (optional):
-
+4. Access inside the container (optional)
 docker exec -it url-shortener-container /bin/bash
 or
 docker exec -it url-shortener-container sh
-
-Check running containers:
-
+5. Check running containers
 docker ps
+
 
 View container logs (optional):
 
