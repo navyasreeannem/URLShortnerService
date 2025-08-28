@@ -51,25 +51,46 @@ This project includes a `Dockerfile` so you can run it easily inside a container
 ### 1. Build the Docker image  
 ```bash
 docker build -t rishithakoganti/url-shortener-backend:tagname .
-2. Login to Docker Hub:
+
+
+```
+### 2. Login to Docker Hub:
+   ```bash
         docker login
-3. Push the image to Docker Hub:
+   ```
+### 3. Push the image to Docker Hub:
+   ```bash
         docker push rishithakoganti/url-shortener-backend:tagname
+   ```
 🔹 For Other Developers (Pull & Run Image)
-1. Login to Docker Hub:
+### 1. Login to Docker Hub:
+   ```bash
         docker login
-2. Pull the image from Docker Hub:
+   ```
+### 2. Pull the image from Docker Hub:
+ ```bash
         docker pull rishithakoganti/url-shortener-backend:tagname
-3. Run the container:
+```
+### 3. Run the container:
+ ```bash
         docker run -d -p 5000:5000 --name url-shortener-container rishithakoganti/url-shortener-backend:tagname
-4. Access inside the container (optional):
+```
+### 4. Access inside the container (optional):
+ ```bash
          docker exec -it url-shortener-container /bin/bash
+```
+```bash
          or
          docker exec -it url-shortener-container sh
-5. Check running containers:
+   ```
+### 5. Check running containers:
+    ```bash
          docker ps
-6. View container logs (optional):
+    ```
+### 6. View container logs (optional):
+    ```bash
          docker logs -f url-shortener-container
+    ```
 ✅ Now the service will be running at:
 👉 http://localhost:5000/ (or the port you exposed)
 
