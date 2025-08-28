@@ -4,10 +4,8 @@ When sharing links on LinkedIn, resumes, or social media, long URLs often look c
 A **URL Shortener Service** solves this problem by converting long, complex URLs into short, user-friendly links.  
 
 ✅ **Example:**  
-https://www.example.com/articles/2025/08/22/url-shortener-service-documentation
-👉 Becomes:  
-https://short.ly/url-doc
-(where `url-doc` is the input given by the user)  
+https://www.example.com/articles/2025/08/22/url-shortener-service-documentation 👉 Becomes:  
+https://short.ly/url-doc (where `url-doc` is the input given by the user)  
 
 This makes links easier to **share, remember, and customize**.  
 
@@ -22,10 +20,10 @@ This makes links easier to **share, remember, and customize**.
 
 ---
 
-## 🎯 Custom Alias Example  
+## 🔗 Custom Alias Example  
 Instead of random IDs like `abc123`, users can choose their own alias:  
-https://short.ly/myportfolio
-https://short.ly/devprofile
+- https://short.ly/myportfolio  
+- https://short.ly/devprofile  
 
 ---
 
@@ -50,9 +48,7 @@ This project includes a `Dockerfile` so you can run it easily inside a container
 
 ## 🔹 For the Project Owner (Build & Push Image)  
 
-## 🔹 For the Project Owner (Build & Push Image)
-
-### 1. Build the Docker image
+### 1. Build the Docker image  
 ```bash
 docker build -t rishithakoganti/url-shortener-backend:tagname .
 2. Login to Docker Hub
@@ -72,15 +68,7 @@ or
 docker exec -it url-shortener-container sh
 5. Check running containers
 docker ps
-
-
-View container logs (optional):
-
+6. View container logs (optional)
 docker logs -f url-shortener-container
-
 ✅ Now the service will be running at:
-
 👉 http://localhost:5000/ (or the port you exposed)
-
----
-
