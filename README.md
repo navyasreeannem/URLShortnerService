@@ -52,7 +52,7 @@ This project includes a `Dockerfile` so you can run it easily inside a container
 ```bash
 docker build -t rishithakoganti/url-shortener-backend:tagname .
 2. Login to Docker Hub
-docker login
+        docker login
 3. Push the image to Docker Hub
 docker push rishithakoganti/url-shortener-backend:tagname
 🔹 For Other Developers (Pull & Run Image)
@@ -72,3 +72,14 @@ docker ps
 docker logs -f url-shortener-container
 ✅ Now the service will be running at:
 👉 http://localhost:5000/ (or the port you exposed)
+
+---
+
+On GitHub, this will render exactly like your screenshot —  
+🔹 Each step starts with **number + heading**  
+🔹 Command appears in a **dark box with a copy button**  
+
+---
+
+Do you also want me to **restructure the earlier "Features / Example / Conclusion" section** in the same numbered style, or keep only the Docker steps like this?
+
