@@ -53,28 +53,45 @@ This project includes a `Dockerfile` so you can run it easily inside a container
 1. **Build the Docker image**  
    ```bash
    docker build -t rishithakoganti/url-shortener-backend:tagname .
-Login to Docker Hub
+Login to Docker Hub:
+
 docker login
-Push the image to Docker Hub
-docker push rishithakoganti/url-shortener-backend:tagname
-🔹 For Other Developers (Pull & Run Image)
-Login to Docker Hub
+
+Push the image to Docker Hub:
+
+docker docker push rishithakoganti/url-shortener-backend:tagname
+
+🔹 For Other Developers (Pull & Run Image):-
+
+Login to Docker Hub:
+
 docker login
+
 Pull the image from Docker Hub
+
 docker pull rishithakoganti/url-shortener-backend:tagname
-Run the container
+
+Run the container:
+
 docker run -d -p 5000:5000 --name url-shortener-container rishithakoganti/url-shortener-backend:tagname
-Access inside the container (optional)
+
+Access inside the container (optional):
+
 docker exec -it url-shortener-container /bin/bash
 or
 docker exec -it url-shortener-container sh
-Check running containers
+
+Check running containers:
+
 docker ps
-View container logs (optional)
+
+View container logs (optional):
+
 docker logs -f url-shortener-container
+
 ✅ Now the service will be running at:
+
 👉 http://localhost:5000/ (or the port you exposed)
 
 ---
 
-Would you like me to also add a **“📦 Quick Start with Docker Compose”** section at the end (so devs can just run `docker-compose up` instead of typing multiple commands)?
