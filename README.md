@@ -74,9 +74,5 @@ docker build -t rishithakoganti/url-shortener-backend:tagname .
 👉 http://localhost:5000/ (or the port you exposed)
 
 ---
- 
 
----
-
-Do you also want me to **restructure the earlier "Features / Example / Conclusion" section** in the same numbered style, or keep only the Docker steps like this?
 
