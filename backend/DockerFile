@@ -4,14 +4,18 @@ FROM node:18
 # Set working directory
 WORKDIR /app
 
-# Copy package.json and package-lock.json
-COPY package.json package-lock.json ./
+# Copy backend package files
+COPY package.json package-lock.json ./ 
 
 # Install dependencies with exact versions from package-lock.json
 RUN npm ci --only=production
 
-# Copy rest of the app
+# Copy backend + frontend + .env into container
 COPY . .
+
+# Make sure .env is available
+# (your server.js must use dotenv to load process.env)
+# e.g., in server.js => require("dotenv").config();
 
 # Expose port (same as in server.js, defaults to 5000)
 EXPOSE 5000
