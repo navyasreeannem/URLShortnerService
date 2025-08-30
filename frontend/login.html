@@ -281,6 +281,7 @@
             }
         }
     </style>
+    <!-- Removed external login.js, using inline script below -->
 </head>
 <body>
     <div class="container-wrapper">
@@ -349,51 +350,51 @@
     <div id="popup-message"></div>
 
     <script>
-        document.getElementById('login-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            
-            // Simple validation
-            if (!email || !password) {
-                showPopup('Please fill in all fields', true);
-                return;
-            }
-            
-            if (!isValidEmail(email)) {
-                showPopup('Please enter a valid email address', true);
-                return;
-            }
-            
-            // In a real application, you would send this data to a server
-            // For demo purposes, we'll just show a success message
-            showPopup('Login successful! Redirecting...');
-            
-            // Reset form
-            this.reset();
-        });
-        
-        function isValidEmail(email) {
-            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return re.test(email);
-        }
-        
-        function showPopup(message, isError = false) {
-            const popup = document.getElementById('popup-message');
-            popup.textContent = message;
-            popup.className = '';
-            
-            if (isError) {
-                popup.classList.add('error');
-            }
-            
-            popup.classList.add('show');
-            
-            setTimeout(() => {
-                popup.classList.remove('show');
-            }, 3000);
-        }
+                document.addEventListener('DOMContentLoaded', () => {
+                    // Always clear any existing token when login page loads
+                    localStorage.removeItem('token');
+                    const loginForm = document.getElementById('login-form');
+                    if (!loginForm) return;
+
+                    loginForm.addEventListener('submit', async function (e) {
+                        e.preventDefault();
+                        const email = document.getElementById('email').value.trim();
+                        const password = document.getElementById('password').value.trim();
+                        if (!email || !password) {
+                            showPopup('Please fill in all fields', true);
+                            return;
+                        }
+                        try {
+                            const response = await fetch('http://localhost:5000/api/auth/login', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({ email, password })
+                            });
+                            const data = await response.json();
+                            if (!response.ok) {
+                                showPopup(data.error || 'Login failed', true);
+                                return;
+                            }
+                            localStorage.setItem('token', data.token);
+                            showPopup('Login successful! Redirecting...');
+                            setTimeout(() => window.location.href = 'url.html', 1500);
+                        } catch (error) {
+                            console.error(error);
+                            showPopup('Server error. Try again later.', true);
+                        }
+                    });
+                    function showPopup(message, isError = false) {
+                        const popup = document.getElementById('popup-message');
+                        if (!popup) return;
+                        popup.textContent = message;
+                        popup.className = '';
+                        if (isError) popup.classList.add('error');
+                        popup.classList.add('show');
+                        setTimeout(() => popup.classList.remove('show'), 3000);
+                    }
+                });
+       
+
     </script>
 </body>
 </html>
