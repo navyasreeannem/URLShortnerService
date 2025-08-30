@@ -270,6 +270,7 @@
             flex: 1;
         }
     </style>
+    <!-- Removed external register.js, using inline script below -->
 </head>
 <body>
     <div class="container-wrapper">
@@ -352,158 +353,52 @@
     <div id="popup-message"></div>
 
     <script>
-        document.getElementById('signup-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const firstName = document.getElementById('firstname').value;
-            const lastName = document.getElementById('lastname').value;
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            const confirmPassword = document.getElementById('confirm-password').value;
-            const agreeTerms = document.getElementById('agree-terms').checked;
-            
-            // Validation
-            if (!firstName || !lastName || !email || !password || !confirmPassword) {
-                showPopup('Please fill in all fields', true);
-                return;
-            }
-            
-            if (!isValidEmail(email)) {
-                showPopup('Please enter a valid email address', true);
-                return;
-            }
-            
-            if (password !== confirmPassword) {
-                showPopup('Passwords do not match', true);
-                return;
-            }
-            
-            if (!isPasswordStrong(password)) {
-                showPopup('Password does not meet requirements', true);
-                return;
-            }
-            
-            if (!agreeTerms) {
-                showPopup('Please agree to the terms and conditions', true);
-                return;
-            }
-            
-            // In a real application, you would send this data to a server
-            showPopup('Account created successfully! Redirecting...');
-            
-            // Reset form
-            this.reset();
-            resetPasswordCriteria();
-        });
-        
-        function isValidEmail(email) {
-            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return re.test(email);
+                document.addEventListener('DOMContentLoaded', () => {
+    const signupForm = document.getElementById('signup-form');
+    if (!signupForm) return;
+
+    signupForm.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const email = document.getElementById('email').value.trim();
+        const password = document.getElementById('password').value.trim();
+        const confirmPassword = document.getElementById('confirm-password').value.trim();
+        if (!email || !password || !confirmPassword) {
+            showPopup('Please fill in all fields', true);
+            return;
         }
-        
-        function isPasswordStrong(password) {
-            // At least 8 characters, one uppercase letter, and one number
-            const re = /^(?=.*[A-Z])(?=.*\d).{8,}$/;
-            return re.test(password);
+        if (password !== confirmPassword) {
+            showPopup('Passwords do not match', true);
+            return;
         }
-        
-        function showPopup(message, isError = false) {
-            const popup = document.getElementById('popup-message');
-            popup.textContent = message;
-            popup.className = '';
-            
-            if (isError) {
-                popup.classList.add('error');
+        try {
+            const response = await fetch('http://localhost:5000/api/auth/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, password })
+            });
+            const data = await response.json();
+            if (!response.ok) {
+                showPopup(data.error || 'Registration failed', true);
+                return;
             }
-            
-            popup.classList.add('show');
-            
-            setTimeout(() => {
-                popup.classList.remove('show');
-            }, 3000);
+            showPopup('Account created successfully! Redirecting to login...');
+            setTimeout(() => window.location.href = 'login.html', 1500);
+        } catch (error) {
+            console.error(error);
+            showPopup('Server error. Try again later.', true);
         }
+    });
+    function showPopup(message, isError = false) {
+        const popup = document.getElementById('popup-message');
+        if (!popup) return;
+        popup.textContent = message;
+        popup.className = '';
+        if (isError) popup.classList.add('error');
+        popup.classList.add('show');
+        setTimeout(() => popup.classList.remove('show'), 3000);
+    }
+});
         
-        // Password visibility toggle
-        document.getElementById('togglePassword').addEventListener('click', function() {
-            const passwordInput = document.getElementById('password');
-            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-            passwordInput.setAttribute('type', type);
-            
-            // Toggle eye icon
-            this.classList.toggle('fa-eye');
-            this.classList.toggle('fa-eye-slash');
-        });
-        
-        // Password strength checker
-        document.getElementById('password').addEventListener('input', function() {
-            const password = this.value;
-            const length = document.getElementById('length');
-            const uppercase = document.getElementById('uppercase');
-            const number = document.getElementById('number');
-            
-            // Check length
-            if (password.length >= 8) {
-                length.classList.add('criteria-met');
-            } else {
-                length.classList.remove('criteria-met');
-            }
-            
-            // Check uppercase
-            if (/[A-Z]/.test(password)) {
-                uppercase.classList.add('criteria-met');
-            } else {
-                uppercase.classList.remove('criteria-met');
-            }
-            
-            // Check number
-            if (/\d/.test(password)) {
-                number.classList.add('criteria-met');
-            } else {
-                number.classList.remove('criteria-met');
-            }
-            
-            // Check if passwords match
-            const confirmPassword = document.getElementById('confirm-password').value;
-            const passwordMatchHint = document.getElementById('password-match-hint');
-            
-            if (confirmPassword) {
-                if (password === confirmPassword) {
-                    passwordMatchHint.textContent = 'Passwords match';
-                    passwordMatchHint.style.color = 'var(--success-color)';
-                } else {
-                    passwordMatchHint.textContent = 'Passwords do not match';
-                    passwordMatchHint.style.color = 'var(--error-color)';
-                }
-            }
-        });
-        
-        // Confirm password matching
-        document.getElementById('confirm-password').addEventListener('input', function() {
-            const password = document.getElementById('password').value;
-            const confirmPassword = this.value;
-            const passwordMatchHint = document.getElementById('password-match-hint');
-            
-            if (password && confirmPassword) {
-                if (password === confirmPassword) {
-                    passwordMatchHint.textContent = 'Passwords match';
-                    passwordMatchHint.style.color = 'var(--success-color)';
-                } else {
-                    passwordMatchHint.textContent = 'Passwords do not match';
-                    passwordMatchHint.style.color = 'var(--error-color)';
-                }
-            } else {
-                passwordMatchHint.textContent = 'Passwords must match';
-                passwordMatchHint.style.color = '#95a5a6';
-            }
-        });
-        
-        function resetPasswordCriteria() {
-            document.getElementById('length').classList.remove('criteria-met');
-            document.getElementById('uppercase').classList.remove('criteria-met');
-            document.getElementById('number').classList.remove('criteria-met');
-            document.getElementById('password-match-hint').textContent = 'Passwords must match';
-            document.getElementById('password-match-hint').style.color = '#95a5a6';
-        }
-    </script>
-</body>
+        </script>
+        </body>
 </html>
