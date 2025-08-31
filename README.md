@@ -53,25 +53,18 @@ This project includes a `Dockerfile` so you can run it easily inside a container
    ```
 ### 2. Pull the image from Docker Hub:
  ```bash
-        docker pull rishithakoganti/url-shortener-backend:latest
+        docker pull rishithakoganti/url-shortner-server:latest
+
 ```
-### 3. Run the container:
+### 3. Run the container and the env file:
  ```bash
-        docker run -d -p 5000:5000 --name url-shortener-container rishithakoganti/url-shortener-backend:latest
+       docker run --env-file backend/.env -p 5000:5000 rishithakoganti/url-shortner-server:latest
 ```
-### 4. Access inside the container (optional):
- ```bash
-         docker exec -it url-shortener-container /bin/bash
-```
-```bash
-         or
-         docker exec -it url-shortener-container sh
-   ```
-### 5. Check running containers:
+### 4. Check running containers:
 ```bash
          docker ps
 ```
-### 6. View container logs (optional):
+### 5. View container logs (optional):
 ```bash
          docker logs -f url-shortener-container
 ```
