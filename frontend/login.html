@@ -281,7 +281,6 @@
             }
         }
     </style>
-    <!-- Removed external login.js, using inline script below -->
 </head>
 <body>
     <div class="container-wrapper">
@@ -327,18 +326,10 @@
             <div class="divider"></div>
 
             <div class="social-login">
-                <div class="social-btn">
-                    <i class="fab fa-google"></i>
-                </div>
-                <div class="social-btn">
-                    <i class="fab fa-facebook-f"></i>
-                </div>
-                <div class="social-btn">
-                    <i class="fab fa-twitter"></i>
-                </div>
-                <div class="social-btn">
-                    <i class="fab fa-linkedin-in"></i>
-                </div>
+                <div class="social-btn"><i class="fab fa-google"></i></div>
+                <div class="social-btn"><i class="fab fa-facebook-f"></i></div>
+                <div class="social-btn"><i class="fab fa-twitter"></i></div>
+                <div class="social-btn"><i class="fab fa-linkedin-in"></i></div>
             </div>
 
             <div class="signup-link">
@@ -350,51 +341,60 @@
     <div id="popup-message"></div>
 
     <script>
-                document.addEventListener('DOMContentLoaded', () => {
-                    // Always clear any existing token when login page loads
-                    localStorage.removeItem('token');
-                    const loginForm = document.getElementById('login-form');
-                    if (!loginForm) return;
+        document.addEventListener('DOMContentLoaded', () => {
+            // Remove old token on login page load
+            localStorage.removeItem('token');
+            const loginForm = document.getElementById('login-form');
 
-                    loginForm.addEventListener('submit', async function (e) {
-                        e.preventDefault();
-                        const email = document.getElementById('email').value.trim();
-                        const password = document.getElementById('password').value.trim();
-                        if (!email || !password) {
-                            showPopup('Please fill in all fields', true);
+            // ✅ Auto switch between localhost & Render
+            const baseURL = window.location.hostname.includes("localhost")
+                ? "http://localhost:5000"
+                : "https://urlshortnerservice-backend-6euz.onrender.com"; // replace with your backend Render URL
+
+            if (loginForm) {
+                loginForm.addEventListener('submit', async function (e) {
+                    e.preventDefault();
+                    const email = document.getElementById('email').value.trim();
+                    const password = document.getElementById('password').value.trim();
+                    
+                    if (!email || !password) {
+                        showPopup('Please fill in all fields', true);
+                        return;
+                    }
+
+                    try {
+                        const response = await fetch(`${baseURL}/api/auth/login`, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ email, password })
+                        });
+
+                        const data = await response.json();
+
+                        if (!response.ok) {
+                            showPopup(data.error || 'Login failed', true);
                             return;
                         }
-                        try {
-                            const response = await fetch('http://localhost:5000/api/auth/login', {
-                                method: 'POST',
-                                headers: { 'Content-Type': 'application/json' },
-                                body: JSON.stringify({ email, password })
-                            });
-                            const data = await response.json();
-                            if (!response.ok) {
-                                showPopup(data.error || 'Login failed', true);
-                                return;
-                            }
-                            localStorage.setItem('token', data.token);
-                            showPopup('Login successful! Redirecting...');
-                            setTimeout(() => window.location.href = 'url.html', 1500);
-                        } catch (error) {
-                            console.error(error);
-                            showPopup('Server error. Try again later.', true);
-                        }
-                    });
-                    function showPopup(message, isError = false) {
-                        const popup = document.getElementById('popup-message');
-                        if (!popup) return;
-                        popup.textContent = message;
-                        popup.className = '';
-                        if (isError) popup.classList.add('error');
-                        popup.classList.add('show');
-                        setTimeout(() => popup.classList.remove('show'), 3000);
+
+                        localStorage.setItem('token', data.token);
+                        showPopup('Login successful! Redirecting...');
+                        setTimeout(() => window.location.href = 'url.html', 1500);
+                    } catch (error) {
+                        console.error(error);
+                        showPopup('Server error. Try again later.', true);
                     }
                 });
-       
+            }
 
+            function showPopup(message, isError = false) {
+                const popup = document.getElementById('popup-message');
+                popup.textContent = message;
+                popup.className = '';
+                if (isError) popup.classList.add('error');
+                popup.classList.add('show');
+                setTimeout(() => popup.classList.remove('show'), 3000);
+            }
+        });
     </script>
 </body>
 </html>
