@@ -79,7 +79,7 @@
         }
         try {
           const token = localStorage.getItem('token');
-          const response = await fetch('http://localhost:5000/api/shorten', {
+          const response = await fetch('https://urlshortnerservice-backend-6euz.onrender.com', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
