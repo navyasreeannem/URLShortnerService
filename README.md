@@ -75,7 +75,7 @@ This project includes a `Dockerfile` so you can run it easily inside a container
 
 🌍 Live Deployment
 
-🔗 Backend is live here:
+🔗 Website is live here:
 👉 https://urlshortnerservice-backend-6euz.onrender.com
 
 ⚠️ Caution: The free Bitly API key allows only 3 shorten requests.
