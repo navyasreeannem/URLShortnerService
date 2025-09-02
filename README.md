@@ -103,21 +103,25 @@ Deployment is simplified, portable, and production-ready using Docker.
  **👩‍💻 Navya Sree (23211A6710)**
  
 **Frontend Styling**
+
 	•	Designed and customized the user interface (UI) with advanced CSS styling, ensuring the application has a clean, modern, and visually appealing look.
 	•	Focused on making the frontend responsive across multiple screen sizes, ensuring a smooth experience on desktops, tablets, and mobile devices.
 	•	Enhanced user experience (UX) by refining layouts, improving typography choices, adjusting spacing, and aligning elements consistently to create a professional flow throughout the             application.
 	•	Worked on improving visual hierarchy and readability, making navigation more intuitive for end-users.
 **Backend Integration**
+
 	•	Integrated the application with MongoDB to store and manage user authentication details securely.
 	•	Implemented login and signup functionalities, ensuring proper encryption and validation of sensitive data like passwords.
 	•	Designed and maintained an efficient database schema to handle user-related data without redundancy, enabling faster query execution and smoother performance.
 	•	Ensured proper error handling and data validation in backend routes to increase reliability and prevent faulty user input.
 **API Integration**
+
 	•	Successfully integrated the Bitly API to add URL shortening functionality, allowing users to generate shorter, shareable links directly from the application.
 	•	Created and configured a new Bitly API token, which was carefully stored as an environment variable to enhance project security and prevent accidental exposure.
 	•	Implemented API request handling in the backend, verifying responses from the Bitly API to confirm reliability and validity.
 	•	Tested the integration thoroughly to ensure smooth performance and handled edge cases such as invalid or expired tokens gracefully.
 **Deployment**
+
 	•	Deployed the complete full-stack application on Render, making it accessible to users with a stable and secure hosting environment.
 	•	Configured production-ready connections between the backend, frontend, and MongoDB database to ensure data flow remains uninterrupted after deployment.
 	•	Optimized deployment by managing environment variables, including the Bitly token, to ensure security and scalability.
