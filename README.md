@@ -103,31 +103,39 @@ Deployment is simplified, portable, and production-ready using Docker.
 
 **👩‍💻 Navya Sree (23211A6710)**
 
-**Frontend Styling**
+**1.Frontend Styling**
+
 In the Frontend Styling part of the project, I designed and customized the user interface (UI) with advanced CSS styling, ensuring the application had a clean, modern, and visually appealing look. I focused on making the frontend responsive across multiple screen sizes, which provided a smooth experience on desktops, tablets, and mobile devices. To enhance the user experience (UX), I refined layouts, improved typography choices, adjusted spacing, and aligned elements consistently to create a professional flow throughout the application. I also worked on improving visual hierarchy and readability, making navigation more intuitive for end-users.
 
-**Backend Integration**
+**2.Backend Integration**
+
 For the Backend Integration, I connected the application with MongoDB to store and manage user authentication details securely. I implemented login and signup functionalities with proper encryption and validation of sensitive data like passwords. An efficient database schema was designed to handle user-related data without redundancy, enabling faster query execution and smoother performance. I also ensured proper error handling and data validation in backend routes, thereby increasing reliability and preventing faulty user input.
 
-**API Integration**
+**3.API Integration**
+
 In the API Integration phase, I successfully integrated the Bitly API to provide URL shortening functionality, allowing users to generate shorter, shareable links directly from the application. I created and configured a new Bitly API token, carefully stored it as an environment variable to enhance project security, and prevented accidental exposure. The backend was equipped with API request handling logic to verify responses from the Bitly API, ensuring reliability and validity. I tested the integration thoroughly and handled edge cases such as invalid or expired tokens gracefully.
 
-**Deployment**
+**4.Deployment**
+
 Finally, under Deployment, I deployed the complete full-stack application on Render, making it accessible to users with a stable and secure hosting environment. I configured production-ready connections between the backend, frontend, and MongoDB database to ensure uninterrupted data flow after deployment. Deployment was optimized by managing environment variables, including the Bitly token, to ensure both security and scalability. Multiple validation checks were conducted post-deployment to confirm authentication, API integration, and overall application functionality worked seamlessly in the live environment. This ensured the deployed version of the project delivered a real-world ready solution with consistent uptime and reliability.
 
 
 **👩‍💻 Vyshnavi (23211A6721)**
 
-**Backend Development from Scratch**
+**1.Backend Development from Scratch**
+
 For the Backend Development from Scratch, I designed and developed the backend architecture using Node.js and Express, ensuring a clean, modular, and scalable codebase. I defined proper folder structures, routes, middleware, and controllers to maintain readability and separation of concerns. The server-side logic was implemented to handle all major functionalities of the project, including API routing, data validation, and error handling. I also focused on performance optimization by ensuring efficient query handling, middleware usage, and structured workflows in the backend, along with proper logging and debugging mechanisms for smooth operations during both development and deployment.
 
-**Authentication System**
+**2.Authentication System**
+
 In terms of the Authentication System, I built a secure mechanism using MongoDB for storing and managing user credentials. I implemented user registration and login features with proper validation and error handling. Password security was ensured by applying encryption and hashing techniques before storing data in the database. Middleware functions were created to verify authentication tokens and restrict access to protected routes. The system was designed to handle session management effectively, ensuring secure access across the application.
 
-**URL Shortening Functionality**
+**3.URL Shortening Functionality**
+
 For the URL Shortening Functionality, I developed backend logic for short link generation and integrated the Bitly API for accurate and reliable shortening. Endpoints were created to receive long URLs from the frontend and return shortened URLs as output. The Bitly API token was managed securely using environment variables to prevent token leakage. I also implemented response validation and error handling to manage invalid URLs or expired tokens, optimizing backend responses to ensure quick and accurate short link generation for end-users.
 
-**End-to-End Backend Responsibility**
+**4.End-to-End Backend Responsibility**
+
 Taking End-to-End Backend Responsibility, I built, tested, and debugged the backend system completely, ensuring authentication and URL shortening features worked seamlessly. I collaborated with my team to integrate backend APIs with the frontend interface, ensuring smooth data exchange. The final delivery was a reliable, production-ready backend that supported all major functionalities of the project.
 
 **🌍 Live Deployment**
