@@ -73,6 +73,7 @@ This project includes a `Dockerfile` so you can run it easily inside a container
 
 ---
 **✨ Members’ Contribution Summary**
+
 **👩‍💻 Rishitha Koganti (23211A6751)**
 
 Contributed to project integrates a static frontend built with HTML, CSS, and Bootstrap with a backend powered by Node.js and Express. The frontend provides the user interface, while the backend handles API requests, server logic, and external integrations.
