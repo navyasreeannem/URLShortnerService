@@ -105,7 +105,30 @@ Performed regular validations after every integration and deployment.
 Documented the GitHub and Jenkins setup for future reference.
 Strengthened the project’s DevOps workflow, making it collaborative, automated, and production-ready.
 
+*👩‍💻Sampreethi (23211A6764)*
 
+*1.Frontend Static Files Development*
+
+Designed and managed the frontend static files that form the core structure of the application’s user interface.
+Focused on building a clean, responsive layout that is easy to navigate and user-friendly.
+Ensured the frontend integrates seamlessly with backend APIs for smooth data flow.
+
+*2.Flash Pop-ups & Notifications*
+
+Implemented flash pop-up messages to provide instant feedback to users during interactions.
+Configured pop-ups for various scenarios such as successful actions, warnings, and errors, improving user awareness.
+Enhanced the overall user experience by keeping communication with users clear and interactive'
+
+*3.Client-Side Error Handling*
+
+Developed client-side error handling mechanisms to validate input before sending data to the server.
+Displayed real-time error messages to guide users in correcting mistakes (e.g., invalid input formats or empty fields).
+Reduced the chances of invalid requests reaching the backend, improving system efficiency and reliability.
+
+*4.User Experience Enhancements*
+
+Combined static UI design, flash notifications, and client-side validations to create a smooth, interactive, and reliable frontend experience.
+Ensured the application feels more responsive and professional by minimizing errors and providing clear feedback.
 **👩‍💻 Vyshnavi (23211A6721)**
 
 **1.Backend Development from Scratch**
