@@ -176,6 +176,70 @@ Strengthened the project’s DevOps workflow, making it collaborative, automated
 
 ⚠️ Caution: The free Bitly API key allows only 3 shorten requests. If you exceed this limit, you’ll see an error like: Failed to shorten URL - API limit exceeded.
 
+👩‍💻 Bhavana (23211A6757)
+
+1.Continuous Integration (CI)
+
+Automatically integrates and validates every code change pushed to GitHub.
+Code Fetching: Pulls the latest code from the GitHub repository using SCM triggers or scheduled polling.
+Dependency Installation: Installs required dependencies using npm install.
+Automated Testing: Runs unit and integration tests using npm test.
+Ensures no broken code is merged into the main branch.
+
+2.Continuous Delivery (CD)
+
+Automates builds and keeps the application always in a deployable state.
+Executes the build process to generate production-ready artifacts using npm run build.
+Provides a foundation for extending deployments to staging or production servers in future phases.
+
+3.Automated Build Triggers
+
+Configured with Poll SCM to monitor the GitHub repository continuously.
+Automatically triggers builds whenever changes are detected.
+Provides a fast feedback loop for developers.
+
+4.Role-Based Access Control (RBAC)
+
+Configured different user roles such as admin, developer, and viewer.
+Assigned permissions so that only authorized users can modify configurations or trigger builds.
+
+5.Notifications and Feedback
+
+Integrated email notifications to keep the team updated.
+Sends alerts for successful builds and immediate notifications for build or test failures.
+Provides detailed logs and reports for faster debugging.
+
+6.Integration with GitHub
+
+Ensured strong synchronization between GitHub and Jenkins workflows.
+Maintains a clear build history aligned with repository commits.
+
+👩‍💻Sampreethi (23211A6764)
+
+1.Frontend Static Files Development
+
+Designed and managed the frontend static files that form the core structure of the application’s user interface.
+Focused on building a clean, responsive layout that is easy to navigate and user-friendly.
+Ensured the frontend integrates seamlessly with backend APIs for smooth data flow.
+
+2.Flash Pop-ups & Notifications
+
+Implemented flash pop-up messages to provide instant feedback to users during interactions.
+Configured pop-ups for various scenarios such as successful actions, warnings, and errors, improving user awareness.
+Enhanced the overall user experience by keeping communication with users clear and interactive.
+
+3.Client-Side Error Handling
+
+Developed client-side error handling mechanisms to validate input before sending data to the server.
+Displayed real-time error messages to guide users in correcting mistakes (e.g., invalid input formats or empty fields).
+Reduced the chances of invalid requests reaching the backend, improving system efficiency and reliability.
+
+4.User Experience Enhancements
+
+Combined static UI design, flash notifications, and client-side validations to create a smooth, interactive, and reliable frontend experience.
+Ensured the application feels more responsive and professional by minimizing errors and providing clear feedback.
+
+
 
 
 
