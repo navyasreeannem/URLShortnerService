@@ -170,11 +170,6 @@ Performed regular validations after every integration and deployment.
 Documented the GitHub and Jenkins setup for future reference.
 Strengthened the project’s DevOps workflow, making it collaborative, automated, and production-ready.
 
-**🌍 Live Deployment**
-
-🔗 Website is live here: 👉 https://urlshortnerservice-backend-6euz.onrender.com
-
-⚠️ Caution: The free Bitly API key allows only 3 shorten requests. If you exceed this limit, you’ll see an error like: Failed to shorten URL - API limit exceeded.
 
 👩‍💻 Bhavana (23211A6757)
 
@@ -239,6 +234,11 @@ Reduced the chances of invalid requests reaching the backend, improving system e
 Combined static UI design, flash notifications, and client-side validations to create a smooth, interactive, and reliable frontend experience.
 Ensured the application feels more responsive and professional by minimizing errors and providing clear feedback.
 
+**🌍 Live Deployment**
+
+🔗 Website is live here: 👉 https://urlshortnerservice-backend-6euz.onrender.com
+
+⚠️ Caution: The free Bitly API key allows only 3 shorten requests. If you exceed this limit, you’ll see an error like: Failed to shorten URL - API limit exceeded.
 
 
 
