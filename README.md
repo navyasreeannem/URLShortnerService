@@ -79,20 +79,20 @@ This project includes a `Dockerfile` so you can run it easily inside a container
 Contributed to project integrates a static frontend built with HTML, CSS, and Bootstrap with a backend powered by Node.js and Express. The frontend provides the user interface, while the backend handles API requests, server logic, and external integrations.
 
 
-**Frontend–Backend Integration**
+**1.Frontend–Backend Integration**
 
 The frontend consists of responsive pages styled with Bootstrap.
 All dynamic requests (such as URL shortening) are sent to the backend through defined API routes.
 In production, the backend is configured to serve both the frontend files and API from the same server, ensuring smooth operation without CORS issues.
 
-**Bitly Key Integration and Verification**
+**2.Bitly Key Integration and Verification**
 
 A Bitly Access Token is used to enable URL shortening.
 The key is stored as an environment variable in the backend for security.
 When the server starts, the key is verified with the Bitly API to ensure it is valid.
 The backend exposes a secure endpoint for shortening 
 
-**Dockerfile and Deployment**
+**3.Dockerfile and Deployment**
 
 The project includes a Dockerfile for seamless deployment.
 It defines instructions to copy the project files, install dependencies, and configure the server.
