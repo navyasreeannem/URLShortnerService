@@ -104,29 +104,57 @@ Deployment is simplified, portable, and production-ready using Docker.
  
 **Frontend Styling**
 
-	•	Designed and customized the user interface (UI) with advanced CSS styling, ensuring the application has a clean, modern, and visually appealing look.
-	•	Focused on making the frontend responsive across multiple screen sizes, ensuring a smooth experience on desktops, tablets, and mobile devices.
-	•	Enhanced user experience (UX) by refining layouts, improving typography choices, adjusting spacing, and aligning elements consistently to create a professional flow throughout the             application.
-	•	Worked on improving visual hierarchy and readability, making navigation more intuitive for end-users.
+		Designed and customized the user interface (UI) with advanced CSS styling, ensuring the application has a clean, modern, and visually appealing look.
+		Focused on making the frontend responsive across multiple screen sizes, ensuring a smooth experience on desktops, tablets, and mobile devices.
+		Enhanced user experience (UX) by refining layouts, improving typography choices, adjusting spacing, and aligning elements consistently to create a professional flow throughout the             application.
+		Worked on improving visual hierarchy and readability, making navigation more intuitive for end-users.
 **Backend Integration**
 
-	•	Integrated the application with MongoDB to store and manage user authentication details securely.
-	•	Implemented login and signup functionalities, ensuring proper encryption and validation of sensitive data like passwords.
-	•	Designed and maintained an efficient database schema to handle user-related data without redundancy, enabling faster query execution and smoother performance.
-	•	Ensured proper error handling and data validation in backend routes to increase reliability and prevent faulty user input.
+		Integrated the application with MongoDB to store and manage user authentication details securely.
+		Implemented login and signup functionalities, ensuring proper encryption and validation of sensitive data like passwords.
+		Designed and maintained an efficient database schema to handle user-related data without redundancy, enabling faster query execution and smoother performance.
+		Ensured proper error handling and data validation in backend routes to increase reliability and prevent faulty user input.
 **API Integration**
 
-	•	Successfully integrated the Bitly API to add URL shortening functionality, allowing users to generate shorter, shareable links directly from the application.
-	•	Created and configured a new Bitly API token, which was carefully stored as an environment variable to enhance project security and prevent accidental exposure.
-	•	Implemented API request handling in the backend, verifying responses from the Bitly API to confirm reliability and validity.
-	•	Tested the integration thoroughly to ensure smooth performance and handled edge cases such as invalid or expired tokens gracefully.
+		Successfully integrated the Bitly API to add URL shortening functionality, allowing users to generate shorter, shareable links directly from the application.
+		Created and configured a new Bitly API token, which was carefully stored as an environment variable to enhance project security and prevent accidental exposure.
+		Implemented API request handling in the backend, verifying responses from the Bitly API to confirm reliability and validity.
+		Tested the integration thoroughly to ensure smooth performance and handled edge cases such as invalid or expired tokens gracefully.
 **Deployment**
 
-	•	Deployed the complete full-stack application on Render, making it accessible to users with a stable and secure hosting environment.
-	•	Configured production-ready connections between the backend, frontend, and MongoDB database to ensure data flow remains uninterrupted after deployment.
-	•	Optimized deployment by managing environment variables, including the Bitly token, to ensure security and scalability.
-	•	Conducted multiple validation checks post-deployment to confirm that authentication, API integration, and overall application functionalities worked seamlessly in the live environment.
-	•	Ensured the deployed version of the project delivers a real-world ready solution with consistent uptime and reliability.
+		Deployed the complete full-stack application on Render, making it accessible to users with a stable and secure hosting environment.
+		Configured production-ready connections between the backend, frontend, and MongoDB database to ensure data flow remains uninterrupted after deployment.
+		Optimized deployment by managing environment variables, including the Bitly token, to ensure security and scalability.
+		Conducted multiple validation checks post-deployment to confirm that authentication, API integration, and overall application functionalities worked seamlessly in the live environment.
+		Ensured the deployed version of the project delivers a real-world ready solution with consistent uptime and reliability.
+**👩‍💻 Vyshnavi (23211A6721)**
+
+Backend Development from Scratch
+	•	Designed and developed the backend architecture completely from scratch using Node.js and Express, ensuring a clean, modular, and scalable codebase.
+	•	Defined proper folder structures, routes, middleware, and controllers to maintain code readability and separation of concerns.
+	•	Implemented server-side logic to handle all major functionalities of the project, including API routing, data validation, and error handling.
+	•	Focused on performance optimization by ensuring efficient query handling, middleware usage, and structured workflows in the backend.
+	•	Added proper logging and debugging mechanisms to monitor backend operations during both development and deployment.
+
+Authentication System
+	•	Built a secure authentication system using MongoDB for storing and managing user credentials.
+	•	Implemented user registration and login features with validation and error handling.
+	•	Ensured password security by applying encryption/hashing techniques before storing in the database.
+	•	Created middleware functions to verify authentication tokens and restrict access to protected routes.
+	•	Designed the system to handle session management and ensure secure access across the application.
+
+URL Shortening Functionality
+	•	Developed the backend logic for short link generation, integrating the Bitly API for accurate and reliable shortening.
+	•	Created endpoints to receive long URLs from the frontend and return shortened URLs as output.
+	•	Configured and managed the Bitly API token securely using environment variables, preventing token leakage.
+	•	Implemented response validation and error handling to manage cases such as invalid URLs or expired tokens.
+	•	Optimized backend responses to ensure the short link output is returned quickly and accurately for end-users.
+
+End-to-End Backend Responsibility
+	•	Took ownership of building, testing, and debugging the backend system end-to-end.
+	•	Ensured that both authentication and URL shortening features were thoroughly tested and working seamlessly.
+	•	Collaborated with team members to integrate backend APIs with the frontend interface, ensuring smooth data exchange.
+	•	Delivered a reliable, production-ready backend that supports all major functionalities of the project.
 
 **🌍 Live Deployment**
 
