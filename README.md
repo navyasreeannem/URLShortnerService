@@ -137,6 +137,30 @@ For the URL Shortening Functionality, I developed backend logic for short link g
 **4.End-to-End Backend Responsibility**
 
 Taking End-to-End Backend Responsibility, I built, tested, and debugged the backend system completely, ensuring authentication and URL shortening features worked seamlessly. I collaborated with my team to integrate backend APIs with the frontend interface, ensuring smooth data exchange. The final delivery was a reliable, production-ready backend that supported all major functionalities of the project.
+**👩‍💻 Hasini (23211A6701)**
+
+**GitHub Repository Setup & Management**
+	•	Created the GitHub repository from scratch and set up the complete project structure.
+	•	Configured branching strategies to keep development organized and collaborative.
+	•	Regularly committed changes, pushed updates, and maintained proper version control.
+	•	Managed pull requests, reviewed code, and ensured only tested code was merged into the main branch.
+	•	Maintained clear commit messages and history for easy traceability.
+
+**Integration & Collaboration**
+	•	Handled the integration of different modules developed by team members.
+	•	Resolved merge conflicts effectively to maintain smooth progress.
+	•	Verified the integrated code functionality before merging.
+	•	Coordinated with the team to ensure a consistent workflow.
+**Jenkins Integration & CI/CD Pipeline**
+	•	Integrated Jenkins to automate build, testing, and deployment processes.
+	•	Designed and configured a CI/CD pipeline with multiple stages (build, test, deploy).
+	•	Automated pulling code from GitHub, building, and deploying to hosting platforms.
+	•	Monitored the pipeline and quickly resolved build or deployment failures.
+**Additional Contributions**
+	•	Secured environment variables and secret keys within Jenkins and GitHub.
+	•	Performed regular validations after every integration and deployment.
+	•	Documented the GitHub and Jenkins setup for future reference.
+	•	Strengthened the project’s DevOps workflow, making it collaborative, automated, and production-ready.
 
 **🌍 Live Deployment**
 
