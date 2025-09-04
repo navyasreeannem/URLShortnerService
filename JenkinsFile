@@ -2,7 +2,11 @@ pipeline {
     agent any
 
     tools {
-        nodejs 'Node18'  // This matches the Name you gave in Jenkins Tools
+        nodejs 'Node18'  
+    }
+
+    environment {
+        PORT = 5000   
     }
 
     stages {
